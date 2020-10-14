@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'date'
+
+format = '%Y-%m-%dT%H:%M:%S.%L%z'
+loop do
+  $stdout.print DateTime.now.strftime(format)
+  $stdout.print " "
+  $stdout.print $stdin.readline
+  $stdout.flush
+end
