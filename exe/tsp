@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 
-require 'date'
+require "date"
 
-format = '%Y-%m-%dT%H:%M:%S.%L%z'
+format = "%Y-%m-%dT%H:%M:%S.%L%z"
 loop do
+  exit 0 if $stdin.eof?
+  line = $stdin.readline
   $stdout.print DateTime.now.strftime(format)
   $stdout.print " "
-  $stdout.print $stdin.readline
+  $stdout.print line
   $stdout.flush
 end
